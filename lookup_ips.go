@@ -31,8 +31,8 @@ func showIPHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	http.HandleFunc("/", showIPHandler)      // set router
-	err := http.ListenAndServe(":9000", nil) // set listen port
+	http.HandleFunc("/", showIPHandler)             // set router
+	err := http.ListenAndServe("0.0.0.0:9000", nil) // set listen port
 	if err != nil {
 		log.Fatal("ListenAndServe: ", err)
 	}
